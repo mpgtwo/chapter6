@@ -16,9 +16,9 @@
 			margin: 1rem;
 			background-color: black;
 			color: whitesmoke;
-			font-size: 5rem;
+			font-size: 3rem;
 			overflow: hidden;
-			background: url("assets/img/flames.gif");
+			background: url("assets/img/starryforest.jpg");
 			background-repeat: no-repeat;
 			background-positon: center;
 			background-size: cover;
@@ -37,25 +37,71 @@
 			border-bottom: 2px solid rgb(220, 200, 180);
 		}
 
+		body {
+			transition-property: transform;
+			transition-duration: 3s;
+		}
 		
 	</style>
 </head>
 <body>
 
 	<div class="grid-container">
-		<div>A</div>
-		<div>radiant</div>
-		<div class="last">young</div>
-		<div>woman</div>
-		<div>to</div>
-		<div>light</div>
-		<div>the</div>
-		<div class="last">darkest</div>
-		<div>corners</div>
-		<div>of</div>
-		<div class="last">winter</div>
+		<div>The</div>
+		<div>curious</div>
+		<div class="last">minds</div>
+		<div>Where</div>
+		<div>our</div>
+		<div>knowledge</div>
+		<div>lends</div>
+		<div>a</div>
+		<div class="last">branch</div>
+		<div>Read</div>
+		<div>in</div>
+		<div>this</div>
+		<div class="last">forest.</div>
 	</div>
 
-	<script src="./assets/js/main.js"></script>
+<script>
+	// Module 6.3
+	function randomNumber(min, max){
+		return(Math.random() * (max-min)) + min;
+	}
+
+	//define divs variable
+	let divs = document.querySelectorAll(".grid-container div");
+
+	function randomize() {
+	//apply only to each of the div tags
+	divs.forEach(function (div) {
+		let scale = randomNumber(.5, 1.2);
+		let translateX = randomNumber(0,50);
+		let translateY = randomNumber(0,20);
+		let rotate = randomNumber(0,360);
+	//half of the time, do this...
+		if (Math.random() >.5) {
+			scale = 1; //don't affect scale
+			translateX = randomNumber(0,80);
+			translateY = randomNumber(0,80);
+		}
+
+		div.style.transform = `scale(${scale}) translates(${translateX}%, ${translateY}%) rotate(${rotate}deg)`;
+	});
+}
+
+document.addEventListener("click", randomize);
+
+	//document.body.style.transform = `rotate(90deg)`;
+	
+//	let rotation = 0;
+//	document.addEventListener("click", function () {
+//		let min = 10;
+//		let max = 40;
+//		rotation += Math.random() * (max - min) + min;
+//		document.body.style.transform = `rotate(${rotation}deg)`;
+//	});
+</script>
+
+
 </body>
 </html>
