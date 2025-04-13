@@ -20,7 +20,7 @@
 			overflow: hidden;
 			background: url("assets/img/starryforest.jpg");
 			background-repeat: no-repeat;
-			background-positon: center;
+			background-position: center;
 			background-size: cover;
 		}
 
@@ -65,7 +65,7 @@
 <script>
 	// Module 6.3
 	function randomNumber(min, max){
-		return(Math.random() * (max-min)) + min;
+		return(Math.random() * (max - min) + min);
 	}
 
 	//define divs variable
@@ -85,7 +85,7 @@
 			translateY = randomNumber(0,80);
 		}
 
-		div.style.transform = `scale(${scale}) translates(${translateX}%, ${translateY}%) rotate(${rotate}deg)`;
+		div.style.transform = `scale(${scale}) translate(${translateX}%, ${translateY}%) rotate(${rotate}deg)`;
 	});
 }
 
